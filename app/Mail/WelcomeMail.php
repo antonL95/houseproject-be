@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Mail;
 
 use App\Models\User;
@@ -18,14 +20,12 @@ class WelcomeMail extends Mailable implements ShouldQueue
     {
     }
 
-
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Welcome',
+            subject: sprintf('Welcome to %s', config('app.name')),
         );
     }
-
 
     public function content(): Content
     {
@@ -33,7 +33,6 @@ class WelcomeMail extends Mailable implements ShouldQueue
             markdown: 'emails.welcome',
         );
     }
-
 
     public function attachments(): array
     {

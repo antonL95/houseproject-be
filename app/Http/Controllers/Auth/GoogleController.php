@@ -28,7 +28,6 @@ final class GoogleController extends Controller
         return $this->getAuthUrl(true);
     }
 
-
     /**
      * @throws \InvalidArgumentException
      */
@@ -36,7 +35,6 @@ final class GoogleController extends Controller
     {
         return $this->login($request, true);
     }
-
 
     /**
      * @throws \InvalidArgumentException
@@ -48,7 +46,6 @@ final class GoogleController extends Controller
 
         return redirect($authUrl);
     }
-
 
     /**
      * @throws \InvalidArgumentException
@@ -112,7 +109,6 @@ final class GoogleController extends Controller
 
         return redirect(RouteServiceProvider::HOME);
     }
-
 
     /**
      * @throws \InvalidArgumentException

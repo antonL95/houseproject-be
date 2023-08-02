@@ -37,7 +37,7 @@ Route::middleware('guest')->group(function () {
     Route::post('reset-password', [NewPasswordController::class, 'store'])
         ->name('password.store');
 
-    Route::prefix('google')->group(static function() {
+    Route::prefix('google')->group(static function () {
         Route::get('auth', [GoogleController::class, 'getAuthUrl'])->name('google.get-auth-url');
         Route::get('login', [GoogleController::class, 'login'])->name('google.login');
     });

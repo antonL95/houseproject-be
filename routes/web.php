@@ -16,13 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', static function (): Illuminate\Contracts\View\View {
-    return view('home');
-});
+Route::get('/', static fn (): Illuminate\Contracts\View\View => view('home'));
 
-Route::get('/dashboard', static function (): Illuminate\Contracts\View\View {
-    return view('dashboard');
-})
+Route::get('/dashboard', static fn (): Illuminate\Contracts\View\View => view('dashboard'))
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
@@ -32,4 +28,4 @@ Route::get('/dashboard', static function (): Illuminate\Contracts\View\View {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });*/
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';

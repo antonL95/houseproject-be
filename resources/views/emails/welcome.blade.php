@@ -1,8 +1,9 @@
 <x-mail::message>
-    # Hi {{ $user->first_name }}
+# @lang('Hi ') {{ $user->first_name }}
 
-    Welcome to Gaval
+@lang('Welcome to ') {{ config('app.name') }}
 
-    Thank you,<br>
-    {{ config('app.name') }}
+@lang('Thank you')
+
+{{ config('app.name') }}
 </x-mail::message>
